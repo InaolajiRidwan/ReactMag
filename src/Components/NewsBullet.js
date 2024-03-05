@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
-const NewsBullet = () => {
+const NewsBullet = (props) => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand bg-white" href="#">
           <span className="text-primary fw-4">FlameTech</span>Mag
         </a>
         <button
@@ -18,32 +18,44 @@ const NewsBullet = () => {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div
+          class="collapse navbar-collapse justify-content-end "
+          id="navbarNav"
+        >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
+              <button onClick={() => props.setCategory("general")}>
+                General
+              </button>
+            </li>
+
+            <li class="nav-item">
+              <button onClick={() => props.setCategory("technology")}>
+                Technology
+              </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Features
-              </a>
+              <button onClick={() => props.setCategory("sport")}>Sport</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Pricing
-              </a>
+              <button onClick={() => props.setCategory("Business")}>
+                Business
+              </button>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-              >
-                Disabled
-              </a>
+              <button onClick={() => props.setCategory("science")}>
+                Science
+              </button>
+            </li>
+            <li class="nav-item">
+              <button onClick={() => props.setCategory("Health")}>
+                Health
+              </button>
+            </li>
+            <li class="nav-item">
+              <button onClick={() => props.setCategory("entertainment")}>
+                Entertainment
+              </button>
             </li>
           </ul>
         </div>
@@ -63,7 +75,7 @@ const NewsBullet = () => {
     //     Entertainment
     //   </button>
     // </div>
-  )
-}
+  );
+};
 
-export default NewsBullet
+export default NewsBullet;
